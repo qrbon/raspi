@@ -1,5 +1,5 @@
 {
-	"date":"2016-06-18T00:10:15Z",
+	"date":"2016-06-18 00:10:15",
 	"store":"Mustermarkt Teststr. -100",
 	"items":[
 		{"name":"Vergoldeter Apfel", "price":100, "amount":1, "ean":"0000000000001", "tax":7},
