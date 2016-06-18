@@ -1,4 +1,10 @@
-import qrcode, Tkinter as tk
+import qrcode
+import sys
+
+if sys.version_info[0] == 2:
+    import Tkinter as tk
+else:
+    import tkinter as tk
 
 class QR_Maker():
     # INPUTS AND CUSTOMISATION
