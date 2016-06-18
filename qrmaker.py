@@ -44,9 +44,9 @@ class QR_Maker():
         return
     pass
 
-
-QR = QR_Maker("Hallo, ich heisse Yorick.", size=12, pattern=8)
-QR.run()
+if __name__ == '__main__':
+    QR = QR_Maker("Hallo, ich heisse Yorick.", size=12, pattern=8)
+    QR.run()
 
 
 
