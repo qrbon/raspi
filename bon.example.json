@@ -1,0 +1,9 @@
+{
+	"date":"2016-06-18T00:10:15Z",
+	"store":"Mustermarkt Teststr. -100",
+	"items":[
+		{"name":"Vergoldeter Apfel", "price":"100€"},
+		{"name":"Versilberter Apfel", "price":"50€"},
+		{"name":"Verkupferter Apfel", "price":"10€"}
+	]
+}
