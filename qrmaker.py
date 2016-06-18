@@ -1,14 +1,17 @@
 import qrcode
 import sys
 
+
 if sys.version_info[0] == 2:
     import Tkinter as tk
 else:
     import tkinter as tk
 
+
 class QR_Maker():
     # INPUTS AND CUSTOMISATION
-    def __init__(self, string, size=1, pattern=10, bd=4, error=qrcode.constants.ERROR_CORRECT_H):
+    def __init__(self, string, size=1, pattern=10, bd=4,
+                 error=qrcode.constants.ERROR_CORRECT_H):
         self.URL_to_compile = str(string)
         self.sizeOfQR = size
         self.sizeOfPattern = pattern
@@ -18,7 +21,8 @@ class QR_Maker():
 
     # GENERATING
     def compileToQR(self):
-        qr = qrcode.QRCode(version=self.sizeOfQR, error_correction=self.errorCorrecction,
+        qr = qrcode.QRCode(version=self.sizeOfQR,
+                           error_correction=self.errorCorrecction,
                            box_size=self.sizeOfPattern, border=self.border)
         qr.add_data(self.URL_to_compile)
         qr.make(fit=True)
@@ -26,7 +30,7 @@ class QR_Maker():
 
     # SAVING
     def saveQR(self):
-        outFile = open("QR_OUT.png", "w")
+        outFile = open("QR_OUT.png", "wb")
         out = self.compileToQR()
         out.save(outFile)
         return
@@ -53,10 +57,3 @@ class QR_Maker():
 if __name__ == '__main__':
     QR = QR_Maker("Hallo, ich heisse Yorick.", size=12, pattern=8)
     QR.run()
-
-
-
-
-
-
-
