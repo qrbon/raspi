@@ -2,7 +2,10 @@ import RPi.GPIO as GPIO
 import time
 import subprocess
 import os
+from bon_generator import generate_bon
+from multiprocessing import Process
 
+process = Process(target=generate_bon)
 
 def main():
     GPIO.setmode(GPIO.BCM)
@@ -23,9 +26,14 @@ def main():
 
 
 def generate_show_code():
-    pid = os.spawnlp(os.P_NOWAIT, "pkill", "-9", "-f", "bot_generator.py")
-    pid = os.spawnlp(os.P_NOWAIT, "python bot_generator.py")
+    global process
+    if "process" in globals() and process.is_alive():
+        print("terminating")
+        process.terminate()
+
+    process = Process(target=generate_bon)
+    process.start()
 
 
 if __name__ == '__main__':
-    generate_show_code()
+    main()
