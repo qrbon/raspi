@@ -1,1 +1,4 @@
 env/
+*.pyc
+QR_OUT.png
+
